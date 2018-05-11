@@ -20,8 +20,8 @@ function random_buffer(length, seed){
 };
 
 var six15IDs = {
-    'vendorId': 1155,
-    'productId': 22336
+    'vendorId': 0x2DC4,
+    'productId': 0x0200
 };
 
 var data = fs.readFileSync('./images/13 SPEEDOMETER_THUNDER.jpg');

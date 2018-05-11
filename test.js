@@ -9,11 +9,11 @@ var usb = require('usb');
 var fs = require('fs');
 var brun = true;
 
+
 var six15IDs = {
-    'vendorId': 1155,
-    'productId': 22336
+    'vendorId': 0x2DC4,
+    'productId': 0x0200
 };
- 
 
 function sendToHud(ep, data){
     return new Promise(r => ep.transfer(data, function(error){        
@@ -38,7 +38,7 @@ async function processFiles(ep, callback){
         const data = fs.readFileSync('./images/'+file);
         console.log('Sent Image length: ' + data.length);
         await sendToHud(ep, data);
-        await delay(50);
+        await delay(100);
 
         count++;
         if(count >= files.length)
